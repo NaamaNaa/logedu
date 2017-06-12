@@ -1,0 +1,23 @@
+// Dropdown Structure
+ul#dropdown1.dropdown-content
+    li
+        a(href='/user/profile') Afficher
+    li
+        a(href='/user/edit') Editer
+    li.divider
+    li
+        a(href='#!') Deconnexion
+nav
+    .nav-wrapper
+        a.brand-logo(href='/') Android Education
+        ul.right.hide-on-med-and-down
+            li
+                a(href='/') Accueil
+            li
+                a(href='/students') Etudiants
+            li
+                a(href='/formation') Formation
+            // Dropdown Trigger
+            li
+                a.dropdown-button(href='#!', data-activates='dropdown1')
+                    | Profil

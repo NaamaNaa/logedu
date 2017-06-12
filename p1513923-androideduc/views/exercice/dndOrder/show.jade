@@ -1,0 +1,64 @@
+extends ../../base
+block include-lib
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css')
+    script(src='/public/js/exercice/dndOrder/show.js')
+    script(src='/public/js/exercice/functions.js')
+
+
+block title
+block body
+    style.
+        #checkBtn , #validBtn{
+            margin-bottom: 20px;
+        }
+        #sortableContainer{
+            margin-bottom: 20px;
+        }
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+
+        #sortable li {
+            margin: 0 3px 3px 3px;
+            padding: 1.4em;
+            padding-left: 1.5em;
+            font-size: 1.4em;
+            height: 18px;
+        }
+
+        #sortable li span {
+            position: absolute;
+            margin-left: -1.3em;
+        }
+
+    script.
+        data = !{JSON.stringify(data)}
+
+    .container
+
+
+
+
+        h1.center Chapter #{data.chapter.id} : #{data.chapter.title}
+
+
+        h4 #{data.exercice.id}) #{data.exercice.statement} :
+        center
+            a#checkBtn.waves-effect.blue.btn Verifier
+        #sortableContainer
+            center
+                ul#sortable
+
+
+
+        center
+
+            a#validBtn.waves-effect.green.btn Valider
+
+
+
+
+

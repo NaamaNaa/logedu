@@ -1,0 +1,77 @@
+extends ../../base
+block include-lib
+
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css')
+    script(src='/public/js/exercice/dndWordDefinition/show.js')
+    script(src='/public/js/exercice/functions.js')
+
+
+block title
+block body
+    style.
+        #checkBtn, #validBtn {
+            margin-bottom: 20px;
+        }
+        .sortable , #responses {
+
+            background: #eee;
+            padding: 5px;
+            width: 143px;
+            list-style-type: none;
+            margin: 0;
+
+            margin-right: 10px;
+            margin-left : 40%;
+            margin-bottom: 20px;
+        }
+
+        .sortable li , #responses li {
+            margin: 5px;
+            padding: 5px;
+            font-size: 1.2em;
+            width: 120px;
+        }
+
+    script.
+        var data = !{JSON.stringify(data)}
+
+    .container
+
+
+
+
+        h1.center Chapter #{data.chapter.id} : #{data.chapter.title}
+
+        .row
+            h4 #{data.exercice.id}) #{data.exercice.statement} :
+
+        center
+            a#checkBtn.waves-effect.blue.btn Verifier
+
+        #sortableContainer
+            h5 Réponses
+
+
+            ul#responses.droptrue
+
+
+            - for (var i = 0 ; i < data.questions.length ; i++) {
+            h5 #{data.questions[i].statement} :
+                  i.tiny.material-icons(style = "color : #3498db;") live_help
+
+            ul(data-questionid= data.questions[i].id, id="sortable"+i, class="droptrue sortable")
+
+            - }
+
+
+
+
+        .row
+           center
+                a#validBtn.waves-effect.green.btn valider
+
+
+
+
+
+

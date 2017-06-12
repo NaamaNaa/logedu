@@ -1,0 +1,53 @@
+extends ../base
+
+block include-lib
+
+    script(src='/public/js/global.js')
+    script(src='/public/js/userType/delete.js')
+block title
+
+block body
+
+    table(class="striped")
+
+        thead
+
+            tr
+                th Formation
+
+        tbody
+            .row
+                .input-field.col.s12
+                    a.waves-effect.green.btn(href="/formation/chapitre/add") Nouveau chapitre
+
+            tr
+                td
+                    ul.collapsible(data-collapsible='accordion')
+                        li
+                            .collapsible-header
+                                i.material-icons add
+                                | Installation
+                            .collapsible-body
+                                ul
+                                    li
+                                        a(href="/formation/chapitre/0") Cours
+
+                    each item in formation
+                        ul.collapsible(data-collapsible='accordion')
+                            li
+                                .collapsible-header
+                                    i.material-icons add
+                                    | Chapitre #{item.chapter.id} : #{item.chapter.title}
+                                .collapsible-body
+                                    ul
+                                        li
+                                            a(href="/formation/chapitre/#{item.chapter.id}") Cours
+                                        li
+                                            ul
+                                                each exercice in item.exercices
+                                                    li
+                                                        | &emsp;
+                                                        a(href="/formation/chapitre/#{item.chapter.id}/exercice/#{exercice.id}") Exercice #{exercice.id}
+                                                li
+                                                    a.btn-floating.btn-tiny.waves-effect.waves-light.green(href="/formation/chapitre/#{item.chapter.id}/exercice/add")
+                                                        i.material-icons add

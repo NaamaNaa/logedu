@@ -1,0 +1,15 @@
+extends ../base
+block include-lib
+    script(src='/public/js/userType/create.js')
+
+
+block title
+block body
+    .row
+        .input-field.col.s12
+            input#name.validate(type='text')
+            label(for='name') Name
+    .row
+        a#createBtn.waves-effect.green.btn save
+
+

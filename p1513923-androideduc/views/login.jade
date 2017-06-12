@@ -1,0 +1,42 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title login
+
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css')
+        link(rel='stylesheet', type='text/css', href='/public/css/login.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js')
+        script(src='/public/js/login.js')
+    body
+        .container
+            div
+                img#img(src='/public/img/man.png')
+                form(method='POST' , action="/login")
+                    div
+                        input#email.form-input(type='text', placeholder='Email')
+                    div
+                        input#password.form-input(type='text', placeholder='Mot de passe')
+                    div
+                        .input-field.col.s6
+                            a#signin.waves-effect.green.btn connexion
+                    div
+                        .input-field.col.s6
+                            a#signup.waves-effect.orange.btn(href="/inscription") s'inscrire
+            div
+                p.erreurMsg
+                p.successMsg
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+        script(type='text/javascript').
+            $(document).ready(function(){
+                $('#envoie').click(function(event){
+                    event.preventDefault();
+                    if (("#email").is(":hidden") ) {
+                        $("#email").show();
+                    }
+                    else {
+                        $('#email').slideUp();
+                    }
+                });
+            });

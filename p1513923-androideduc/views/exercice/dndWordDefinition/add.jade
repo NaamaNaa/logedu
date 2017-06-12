@@ -1,0 +1,44 @@
+extends ../../base
+block include-lib
+    script(src='/public/js/exercice/dndWordDefinition/create.js')
+
+
+block title
+block body
+    script.
+        nbQuestions = #{nbQuestions}
+        idExercice = #{idExercice}
+        numChapter = #{numChapter}
+
+    .container
+        form(id ="addForm" , method="post" , action="" ,class ="col s12" )
+            .row
+                h1.center Définitions
+
+
+                - for (var i = 0; i < nbQuestions  ; ++i) {
+                .row
+                    .input-field.col.s6
+                        input(type="text" , id='question#{i+1}')
+                        label(for='question#{i+1}') Mot #{i+1}
+                    .input-field.col.s6
+                        input(type="text" , id='nbResponses#{i + 1}')
+                        label(for='nbResponses#{i + 1}') Nombre de réponses pour le mot #{i+1}
+                - }
+
+
+            .row
+                center
+                    a#createBtn.waves-effect.green.btn Créer
+
+
+
+
+    // Modal Structure
+    #modal1.modal.modal-fixed-footer
+        .modal-content
+            h4 Réponses
+            #formContent
+        center
+            .modal-footer
+                a#saveBtn.waves-effect.green.btn Créer

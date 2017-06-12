@@ -1,0 +1,40 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title sign up
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css')
+        link(rel='stylesheet', type='text/css', href='/public/css/inscription.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js')
+        script(src='/public/js/user/create.js')
+    body
+        .container
+            form.col.s12
+                .row
+                    h1.center Inscription
+                .row
+                    .input-field.col.s6
+                        input#lastName.validate( type='text')
+                        label(for='lastName') Nom
+                    .input-field.col.s6
+                        input#firstName.validate(type='text')
+                        label(for='firstName') Prenom
+                .row
+                    .input-field.col.s12
+                        select#typeuser
+                            option(value='', disabled='', selected='') Choose your type
+                            each userType in userTypes
+                                option(value='#{userType.id}') #{userType.name}
+                        label Type
+                .row
+                    .input-field.col.s12
+                        input#email.validate(type='email')
+                        label(for='email') Email
+                .row
+                    .input-field.col.s12
+                        input#password.validate(type='password')
+                        label(for='password') Mot de passe
+                .row
+                    a#createBtn.waves-effect.green.btn S'inscrire
+

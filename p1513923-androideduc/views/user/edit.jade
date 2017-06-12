@@ -1,0 +1,26 @@
+extends ../base
+block include-lib
+    script(src='/public/js/global.js')
+
+
+block title
+block body
+    .row
+        h4 éditer mon profil
+    .row
+        .input-field.col.s12
+            input#lastName.validate(type='text' , value="test" )
+            label(for='lastName') Nom
+        .input-field.col.s12
+            input#firstName.validate(type='text' , value="test" )
+            label(for='firstName') Prénom
+        .input-field.col.s12
+            input#email.validate(type='text' , value="test" )
+            label(for='email') Email
+        .input-field.col.s12
+            input#password.validate(type='password' , value="test"  )
+            label(for='password') Mot de passe
+    .row
+        a#createBtn.waves-effect.green.btn(href="/edit/persist") Sauvgarder
+
+

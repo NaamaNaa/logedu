@@ -1,0 +1,58 @@
+extends ../../base
+block include-lib
+
+    // Compiled and minified JavaScript
+    script(src='/public/js/global.js')
+    script(src='/public/js/exercice/fillBlank/aide.js')
+
+
+
+
+
+block title
+block body
+    .container
+        .row
+            center
+                h1 Chapitre 1 :  Activités
+            h5(style='color : #3498db;') Exo 1 : Complètez les champs suivants afin d'obtenir la vue suivante :
+        .center-align
+            img(src='/public/img/exercices/exo1.png', width='200', height='341')
+            .rowresources
+                form#myForm
+                    p.left-align
+                        resources
+                            | &lt ?xml version="1.0" encoding="utf-8"? &gt
+                            br
+                            | &lt LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            br
+                            | android:layout_width="fill_parent"
+                            br
+                            | android:layout_height="fill_parent"
+                            br
+                            | android:orientation="vertical" &lt
+                            br
+                            input#input1.validate(data-response='Button', type='text', style='width:100px;height:10px')
+                            |  android:id="@+id/button1"
+                            span#quest1Help(style='display: none')
+                                a#aide1.btn-floating.btn-large.waves-effect.waves-light.red
+                                    i.material-icons live_help
+                            br
+                            | android:layout_width="wrap_content"
+                            br
+                            | android:layout_height="wrap_content"
+                            br
+                            | android:text=
+                            input#input2.validate(data-response='Button', type='text', style='width:100px;height:10px')
+                            | &gt
+                            span#quest2Help(style='display: none')
+                                a#aide2.btn-floating.btn-large.waves-effect.waves-light.red
+                                    i.material-icons live_help
+                            br
+                        center
+                            a#btnAide.waves-effect.green.btn Vérifier
+
+
+
+
+

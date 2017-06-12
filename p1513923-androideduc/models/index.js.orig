@@ -1,0 +1,20 @@
+/**
+ * Created by HAMIZI16000 on 19/04/2017.
+ */
+
+var sequelize = require('sequelize');
+var config  = require('../config/db');
+
+
+// load models
+var models = [
+    'user'
+];
+models.forEach(function(model) {
+    console.log('import' + model)
+    module.exports[model] = sequelize.import('../models' + model);
+})
+
+
+
+module.exports.sequelize = sequelize;

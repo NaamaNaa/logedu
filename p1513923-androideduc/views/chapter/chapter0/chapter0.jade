@@ -1,0 +1,25 @@
+extends ../../base
+block include-lib
+    script(src='/public/js/global.js')
+    script(src='/public/js/chapter/chapters/install.js')
+    link(rel='stylesheet', type='text/css', href='../../../public/css/chapter.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+
+
+block title
+block body
+
+    .container
+        center
+            .row
+                h1 Installation
+        .row
+            p
+                | Avant de commencer tu vas avoir besoin d'un environnement de travail.
+                | Dans le tutoriel qui suit nous t'expliquons comment installer
+                strong Androïd Studio
+                | .
+                |   Cet IDE te permettra de tester ton code tout au long de ton apprentissage :)
+            center
+                #player
+

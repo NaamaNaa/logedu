@@ -1,0 +1,45 @@
+extends ../../base
+block include-lib
+    script(src='/public/js/exercice/directQuestion/show.js')
+    script(src='/public/js/exercice/functions.js')
+
+
+block title
+block body
+    script.
+        var data = !{JSON.stringify(data)}
+    .container
+
+
+
+
+        h1.center Chapitre #{data.chapter.id} : #{data.chapter.title}
+
+        center
+            a#checkBtn.waves-effect.blue.btn Verifier
+
+
+        form(id ="addForm" , method="post" , action="" ,class ="col s12" )
+            .row
+                h4 #{data.exercice.id}) #{data.exercice.statement} :
+
+
+                - for (var i = 0; i < data.nbQuestions  ;i++) {
+                .row
+                    .input-field.col.s6
+                        input(style="color : Black;",disabled="true",type="text" , id='question#{i+1}',value='#{data.questions[i].statement}')
+                        label(style="color : Black;",for='question#{i+1}') Question #{i+1}
+                    .input-field.col.s6
+                        input(data-questionid  = i , type="text" , id='response#{i + 1}' )
+                        label(for='response#{i + 1}') Réponse #{i + 1}
+                - }
+
+
+            .row
+                center
+                    a#validBtn.waves-effect.green.btn valider
+
+
+
+
+

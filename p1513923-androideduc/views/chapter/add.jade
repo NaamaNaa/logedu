@@ -1,0 +1,8 @@
+h1 add Chapter
+p
+    | tu crée un formulaire ya que title qui nous interesse pour les chapitres et n'oublie pas de rajouter router.post pour /formation/chapitre/add dans index controller
+    | apres tu crée  dans view -> chapitre un fichier Js : create.js  : quand on click sur le bouton  create qui se trouve dans le formulaire
+    | tu fais une requete (post) async  vers le router! regarde (public/js/exercice/create.js) fais le même truc
+    | apres dans router.post ... tu fais le model de chapter.create  et tu donne title et n'oublie pas  de mettre nbExercices à 0 (regarde le model de Chapter)
+    | et pour finir dans le .then de chapter.create tu renvoie res.send({ notif  : 'a new chapter has been added !'})
+    | bonne journée

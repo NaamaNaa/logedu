@@ -1,0 +1,74 @@
+extends ../../base
+block include-lib
+    script(src='/public/js/global.js')
+    link(rel='stylesheet', type='text/css', href='../../../public/css/chapter.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+
+
+block title
+block body
+    .container
+        .row
+            h1 Chapitre 1 :  Activités
+        .row
+
+            h4 Définition
+            p
+                | Dans une application androïd vous avez sans doute constaté que l’architecture est souvent similaire. Une action donnée vous permet de passer d’une fenêtre vers une autre. Ces fenêtres sont appelées activités.
+                | voici un exemple qui vous montre deux activités différentes au sein d’une même application :
+        .imagesCours
+            .imgContainer
+                img(src='../../../public/img/chapter1/maps1.png' )
+                p Activité 1
+            .imgContainer
+                i.material-icons trending_flat
+            .imgContainer
+                img(src='../../../public/img/chapter1/maps2.png')
+                p Activité 2
+
+        h2 cycle de vie
+        | Une activité possède ce qu’on appelle un cycle de vie. Ce cycle dépend des interactions entre le système et le reste des applications présentes sur le smartphone.
+        | Pendant sa vie une activité passe par plusieurs étapes allant de
+        | la naissance jusqu’ à sa mort. Chaque étape de ce cycle est
+        | représentée par une méthode :
+        br
+        strong onCreate()/onDestroy():
+        |  permet de gérer les
+        | opérations à faire avant l'affichage de l'activité, et
+        | lorsqu'on détruit complètement l'activité de la mémoire.
+        | On met en général peu de code dans
+        strong onCreate()
+        | afin d'afficher l'activité le plus rapidement possible.
+        br
+        br
+        strong onStart() / onStop():
+        |  ces méthodes sont appelées quand
+        | l'activité devient visible/invisible pour l'utilisateur.
+        br
+        br
+        strong onPause() / onResume():
+        |  une activité peut rester visible
+        | mais être mise en pause par le fait qu'une autre activité est en
+        | train de démarrer, par exemple B.
+        strong onPause()
+        |  ne doit pas être trop long,
+        | car B ne sera pas créé tant que
+        strong onPause()
+        |  n'a
+        | pas fini son exécution.
+        br
+        strong onRestart():
+        |  cette méthode supplémentaire est appelée quand on relance une activité qui est passée par
+        | onStrop(). Puis
+        strong onStart()
+        |  est aussi appelée.
+        | Cela permet de différencier
+        | le premier lancement d'un relancement.
+        br
+        br
+        | Voici un schéma qui récapitule le cycle de vie d’une activité :
+
+        .imagesCours
+            .imgContainer
+                img(src='../../../public/img/chapter1/diagrammeActions.png' )
+                p Activité 1

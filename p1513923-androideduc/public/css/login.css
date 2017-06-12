@@ -1,0 +1,129 @@
+body{
+    background: url(/public/img/index/android-wallpaper.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.container{
+    background-color: rgba(52, 73, 94,0.6);
+    width :500px;
+    height: 400px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 150px;
+
+}
+
+.container img {
+    width: 120px;
+    height: 120px;
+    margin-top: -90px;
+    margin-bottom: 100px;
+
+}
+
+.form-input{
+    border :none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 45px;
+    width: 300px;
+    padding-left: 30px;
+    font-size: 18px;
+    cursor:text;
+    border: 2px solid white;
+
+}
+
+*:focus {
+    outline: 0 ;
+}
+
+
+
+
+.btn-login{
+    color: white;
+    background-color: #2ecc71;
+    border-style: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    border-bottom: 4px solid #27ae60 ;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #27ae60;
+
+}
+
+
+
+
+
+.erreurMsg{
+    display: none;
+    position: relative;
+    border:none;
+    border-radius: 8px;
+    width: 180px;
+    background-color: #c0392b;
+    color: white;
+    margin-left: 136px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border : 2px solid white;
+    margin-top: 0px;
+
+
+
+}
+
+
+.successMsg{
+    display: none;
+    position: relative;
+    border:none;
+    border-radius: 8px;
+    width: 180px;
+    background-color: #92F22A;
+    color: white;
+    margin-left: 136px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border : 2px solid white;
+    margin-top: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

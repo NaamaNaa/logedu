@@ -1,0 +1,135 @@
+extends ../../base
+block include-lib
+    script(src='/public/js/global.js')
+    link(rel='stylesheet', type='text/css', href='../../../public/css/chapter.css')
+
+
+block title
+block body
+    .row
+        h1 Chapitre 2 : Les Widgets
+    .row
+        .coursTexte
+            p
+                | Les widgets sont les éléments constitutifs de
+                | l’activité. Ils permettent d’afficher du contenu et
+                | l’interaction de l’utilisateur avec l’application.
+                | Chaque widget est caractérisé par un nombre d’attributs
+                | et de méthodes java qui permettent de le manipuler.
+                | Voici une liste de widgets non exhaustive. Ce tableau
+                | récapitule la manière dont ils se présentent en XML
+                | et quelques méthodes permettant de le manipuler :
+            table.striped
+                thead
+                    tr
+                        th Widget
+                        th XML
+                        th Méthodes java pour modifier les valeurs du widget
+                tbody
+                    tr
+                        td TextView
+                        td
+                            | &lt
+                            span.blue-text.text-darken-2 TextView
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 layout_width
+                            | ="fill_parent"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 layout_height
+                            | ="wrap_content"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 text
+                            | ="@string/textView"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 textSize=
+                            | "8sp"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 textColor
+                            | ="#112233" />
+                        td
+                            span.blue-text.text-darken-2 TextView
+                            |  textView = new TextView(this);
+                            br
+                            span.pink-text.text-darken-2 textView.
+                            span.green-text.text-darken-2 setText
+                            | (R.string.textView);
+                            br
+                            span.pink-text.text-darken-2 textView.
+                            span.green-text.text-darken-2 setTextSize
+                            | (8);
+                            br
+                            span.pink-text.text-darken-2 textView.
+                            span.green-text.text-darken-2 setTextColor
+                            | (0x112233);
+                            br
+                    tr
+                        td EditText
+                        td
+                            | &lt
+                            span.blue-text.text-darken-2 EditText
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 layout_width
+                            | ="fill_parent"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 layout_height
+                            | ="wrap_content"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 hint
+                            | ="@string/editText"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 inputType=
+                            | "textMultiLine"
+                            br
+                            span.pink-text.text-darken-2 android:
+                            span.green-text.text-darken-2 lines
+                            | ="5" />
+                        td
+                            span.blue-text.text-darken-2 EditText
+                            |  editText = new EditText(this);
+                            br
+                            span.pink-text.text-darken-2 editText.
+                            span.green-text.text-darken-2 setHint
+                            | (R.string.editText);
+                            br
+                            span.pink-text.text-darken-2 editText.
+                            span.green-text.text-darken-2 setInputType
+                            | (InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                            br
+                            span.pink-text.text-darken-2 editText.
+                            span.green-text.text-darken-2 setLines
+                            | (5);
+                            br
+                    td Button
+                    td
+                        | &lt
+                        span.blue-text.text-darken-2 EditText
+                        br
+                        span.pink-text.text-darken-2 android:
+                        span.green-text.text-darken-2 layout_width
+                        | ="fill_parent"
+                        br
+                        span.pink-text.text-darken-2 android:
+                        span.green-text.text-darken-2 layout_height
+                        | ="wrap_content"
+                        br
+                        span.pink-text.text-darken-2 android:
+                        span.green-text.text-darken-2 text
+                        | ="@string/button"
+                        br
+                    td
+                        span.blue-text.text-darken-2 Button
+                        |  button = new Button(this);
+                        br
+                        span.pink-text.text-darken-2 button.
+                        span.green-text.text-darken-2 setText
+                        | (R.string.editText);
+                        br

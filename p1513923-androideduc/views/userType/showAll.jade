@@ -1,0 +1,31 @@
+extends ../base
+
+block include-lib
+
+    script(src='/public/js/animations.js')
+    script(src='/public/js/userType/delete.js')
+block title
+
+block body
+
+    table(class="striped")
+
+        thead
+
+            tr
+                th Name
+
+                th Action
+
+        tbody
+
+
+            each userType in userTypes
+
+                tr
+
+                    td=userType.name
+
+                    td
+
+                        a(id='#{userType.id}', name = 'deleteBtn' , class="waves-effect red btn") delete

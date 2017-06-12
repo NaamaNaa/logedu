@@ -1,0 +1,24 @@
+extends ../base
+block include-lib
+    script(src='/public/js/global.js')
+
+
+block title
+block body
+
+    center
+        h1 Mon profil
+    .row
+        .input-field.col.s12
+            input#firstName.validate(style="color:black;",type='text' , value="test" , disabled)
+            label(for='lastName',style="color:black;") First Name
+        .input-field.col.s12
+            input#lastName.validate(style="color:black;",type='text' , value="test" , disabled)
+            label(for='firstName',style="color:black;") Last Name
+        .input-field.col.s12
+            input#email.validate(style="color:black;",type='text' , value="test" , disabled)
+            label(for='email',style="color:black;") Email
+    .row
+        a#createBtn.waves-effect.blue.btn(href="/user/edit") Editer
+
+

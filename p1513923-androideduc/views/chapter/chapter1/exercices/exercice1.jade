@@ -1,0 +1,53 @@
+extends ../../../base
+block include-lib
+    script(src='/public/js/global.js')
+    script(src='/public/js/chapter/exercice/rmvCss.js')
+    script(src='/Users/HAMIZI16000/Documents/M1-S2/androProjet/p1513923-androideduc/public/js/exercice/fillBlank/aide.js')
+
+
+block title
+block body
+    .container
+        .row
+            center
+                h1 Chapitre 1 :  Activités
+            h5(style="color : #3498db;") Exo 1 : Complètez les champs suivants
+
+        .rowresources
+            p
+                resources
+                    &lt
+                    input.validate(type='text' ,  style="width:100px;height:10px")
+                    |      name="app_name"&gtTest
+                    | &lt /
+                    input.validate(type='text' ,  style="width:100px;height:10px")
+                    | &gt
+                    br
+                    | &lt
+                    input.validate(type='text' ,  style="width:100px;height:10px")
+                    |      name="operationsystems"&gt
+                    br
+                    |     &emsp;    &ltitem&gt Ubuntu &lt/item&gt
+                    br
+                    |  &emsp;           &ltitem&gt Android &lt/item&gt
+                    br
+                    |  &emsp; &ltitem&gt Microsoft Windows &lt/item&gt
+                    br
+                    |     &lt /
+                    input(type='text'  style="width:100px;height:10px;")
+                    |     &gt
+                    br
+                    |   &lt
+                    input.validate(type='text' ,  style="width:100px;height:10px")
+                    |   &gt name="red"> #ffff0000
+                    | &lt /
+                    input.validate(type='text' ,  style="width:100px;height:10px")
+                    | &gt
+                    br
+                    center
+                        a.waves-effect.green.btn build
+
+
+
+
+
